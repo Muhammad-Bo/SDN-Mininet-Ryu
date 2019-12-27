@@ -8,6 +8,8 @@ Demonstrated: UT-NETWORK LAB
 - Multithreading Python
 
 ### Requirement
+    python -m pip install -U pip setuptools
+    python -m pip install matplotlib
     apt-get install python-tk
     pip install networkx
     
