@@ -273,9 +273,17 @@ sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 ```
 
 4. Testing Iperf client/Server on Hosts:
+```s
+mininet> xterm h2
+mininet> xterm h1
+```
+5. h2 xterm:
 ```sh
-mininet> h2 iperf -s &
-mininet> h1 iperf -c h2 -t 50 -P 6 &
+root@osboxes# iperf -s &
+```
+6. h1 xterm
+```sh
+root@osboxes: iperf -c 10.0.0.2 -t 50 -P 6 &
 ```
 
 
