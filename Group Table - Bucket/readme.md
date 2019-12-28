@@ -90,7 +90,7 @@ if __name__ == '__main__':
 
 2. Running The SDN Controller:
 ```sh
-ryu-manager loadbalancer.py
+ryu-manager loadbalancer_project.py
 ```
 
 3. Verifying the Flows installed on Switches using ovs commands (Optional).
