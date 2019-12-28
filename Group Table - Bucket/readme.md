@@ -44,8 +44,65 @@ chain groups together.
 $ sudo python custom_topo.py
 ```
 
+> custom_topo.py
+```python
+#!/usr/bin/python
 
 
+
+from mininet.topo import Topo
+from mininet.net import Mininet
+from mininet.log import setLogLevel
+from mininet.cli import CLI
+from mininet.node import OVSSwitch, Controller, RemoteController
+from time import sleep
+
+
+class SingleSwitchTopo(Topo):
+    def build(self):
+        s1 = self.addSwitch('s1', protocols='OpenFlow13')
+        s2 = self.addSwitch('s2', protocols='OpenFlow13')
+        s3 = self.addSwitch('s3', protocols='OpenFlow13')
+        s4 = self.addSwitch('s4', protocols='OpenFlow13')
+
+        h1 = self.addHost('h1', mac="00:00:00:00:00:01", ip="10.0.0.1/24")
+        h2 = self.addHost('h2', mac="00:00:00:00:00:02", ip="10.0.0.2/24")
+        
+        self.addLink(s1,s2,1,1)
+        self.addLink(s1,s4,2,1) 
+        self.addLink(s1,h1,3,1)
+        self.addLink(s3,h2,3,1)
+        self.addLink(s3,s4,2,2)
+        self.addLink(s3,s2,1,2)
+
+    
+
+
+if __name__ == '__main__':
+    setLogLevel('info')
+    topo = SingleSwitchTopo()
+    c1 = RemoteController('c1', ip='127.0.0.1')
+    net = Mininet(topo=topo, controller=c1)
+    net.start()
+    CLI(net)
+    net.stop()
+```
+
+2. Running The SDN Controller:
+```sh
+ryu-manager loadbalancer.py
+```
+
+3. Verifying the Flows installed on Switches using ovs commands (Optional).
+```sh
+sudo ovs-ofctl -O OpenFlow13 dump-flows s1
+```
+
+4. Testing Iperf client/Server on Hosts:
+```sh
+mininet> h2 iperf -u -s &
+mininet> h1 iperf -c h2 -t 30 -P 7 &
+```
 
 
 
