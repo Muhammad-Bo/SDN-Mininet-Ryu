@@ -37,12 +37,10 @@ chain groups together.
 ![](https://raw.githubusercontent.com/Muhammad-Bo/SDN-Mininet-Ryu/master/Group%20Table%20-%20Bucket/load.png)
 
 
-### Run Ver 0.1
+#### Run Ver 0.1
 
 1. Running Custom Topolgy in Mininet
-
-  sudo python lb_topo.py
-
+    sudo python lb_topo.py
 
 
 
