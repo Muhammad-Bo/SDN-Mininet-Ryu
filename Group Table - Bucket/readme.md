@@ -21,13 +21,30 @@ chain groups together.
 
 > Figure 1:
 
-![](https://wiki.onosproject.org/download/attachments/10560835/Screen%20Shot%202016-06-01%20at%206.07.35%20AM.png?version=1&modificationDate=1467912190741&api=v2)
-
+![Figure 1](https://wiki.onosproject.org/download/attachments/10560835/Screen%20Shot%202016-06-01%20at%206.07.35%20AM.png?version=1&modificationDate=1467912190741&api=v2)
 
 > Figure 2:
 
+![Figure 2](https://docs.pica8.com/download/thumbnails/3083229/of-group-abstract.png?version=1&modificationDate=1522250172000&api=v2)
 
-![](https://docs.pica8.com/download/thumbnails/3083229/of-group-abstract.png?version=1&modificationDate=1522250172000&api=v2)
+### Project Specification
+
+- Load Balancer Using Group Table 
+- OpenFlow 1.3
+- Mininet
+- Ryu SDN Controller
+
+![](https://raw.githubusercontent.com/Muhammad-Bo/SDN-Mininet-Ryu/master/Group%20Table%20-%20Bucket/load.png)
+
+
+### Run Ver 0.1
+
+1. Running Custom Topolgy in Mininet
+
+  sudo python lb_topo.py
+
+
+
 
 
 
