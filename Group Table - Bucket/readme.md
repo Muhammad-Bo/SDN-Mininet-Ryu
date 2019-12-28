@@ -248,8 +248,8 @@ class SimpleSwitch13(app_manager.RyuApp):
         ofproto = datapath.ofproto
         parser = datapath.ofproto_parser
 
-        weight_1 = 20
-        weight_2 = 80
+        weight_1 = 50
+        weight_2 = 50
 
         watching_port_getting = ofproto_v1_3.OFPP_ANY
         watching_group_getting = ofproto_v1_3.OFPQ_ALL
@@ -271,8 +271,8 @@ sudo ovs-ofctl -O OpenFlow13 dump-flows s1
 
 4. Testing Iperf client/Server on Hosts:
 ```sh
-mininet> h2 iperf -u -s &
-mininet> h1 iperf -c h2 -t 30 -P 7 &
+mininet> h2 iperf -s &
+mininet> h1 iperf -c h2 -t 50 -P 6 &
 ```
 
 
