@@ -40,7 +40,9 @@ chain groups together.
 #### Run Ver 0.1
 
 1. Running Custom Topolgy in Mininet
-    sudo python lb_topo.py
+```sh
+$ sudo python custom_topo.py
+```
 
 
 
