@@ -1,5 +1,5 @@
 
-Demonstrated: UT-NETWORK LAB
+Demonstrated: Phase 1 for TSN-SDN Integration
 
 ### Features
 
